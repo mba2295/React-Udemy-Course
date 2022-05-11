@@ -13,16 +13,16 @@ const Cart = (props) => {
     sendRequest: submitCartItems,
   } = useAxios();
   const cartCtx = useContext(CartContext);
+  const { clearCart } = cartCtx;
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
   const hasItems = cartCtx.items.length > 0;
   const [didCheckedOut, setDidCheckedOut] = useState();
 
   useEffect(() => {
-    debugger;
     if (didCheckedOut && !error) {
-      cartCtx.clearCart();
+      clearCart();
     }
-  }, [didCheckedOut, error, cartCtx]);
+  }, [didCheckedOut, error, clearCart]);
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
   };
@@ -36,7 +36,7 @@ const Cart = (props) => {
     setDidCheckedOut(true);
     const fetchMenuRequestConfig = {
       method: "post",
-      url: "orders",
+      url: "orders.json",
       body: JSON.stringify({ user: userInfo, orderItems: cartCtx.items }),
     };
     submitCartItems(fetchMenuRequestConfig);
