@@ -3,7 +3,7 @@ import Link from "next/link";
 function MainNavigation() {
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>React Vercel CICD Meetups</div>
+      <div className={classes.logo}>CICD NEXT Meetups</div>
       <nav>
         <ul>
           <li>
