@@ -7,7 +7,7 @@ function MainNavigation() {
       <nav>
         <ul>
           <li>
-            <Link href="/">All Meetups</Link>
+            <Link href="/">All Meetups with Vercel CICD</Link>
           </li>
           <li>
             <Link href="/new-meetup">Add New Meetup</Link>
